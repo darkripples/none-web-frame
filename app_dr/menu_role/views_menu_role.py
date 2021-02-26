@@ -151,7 +151,7 @@ def get_menulist_role(req, role_id=None):
         # 请求合法性校验不通过
         return JsonResponse(ret.to_dic())
 
-    if role_id:
+    if not role_id:
         roleMenus = DrRoleMenu.objects.filter()
     else:
         roleMenus = DrRoleMenu.objects.filter(role_id=role_id)
